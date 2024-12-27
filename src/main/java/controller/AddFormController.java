@@ -30,6 +30,10 @@ public class AddFormController implements Initializable {
     public JFXTextField txtAddress1;
     public JFXTextField txtName1;
     public JFXTextField txtSalary1;
+    public JFXTextField txtId11;
+    public JFXTextField txtName11;
+    public JFXTextField txtAddress11;
+    public JFXTextField txtSalary11;
     @FXML
     private TableView<Customer> tableCustomer;
 
@@ -48,8 +52,7 @@ public class AddFormController implements Initializable {
 
    public void loadTable() {
        tableCustomer.getItems().clear();
-      // Connection connection = DBConnection.getInstance().getConnection();
-       //PreparedStatement stm = connection.prepareStatement("Insert into Customer Values(?,?,?,?)");
+
        List<Customer> customerList = new ArrayList<>();
        try {
            Connection connection = DBConnection.getInstance().getConnection();
@@ -122,13 +125,13 @@ public class AddFormController implements Initializable {
             connection = DBConnection.getInstance().getConnection();
 
             PreparedStatement stm = connection.prepareStatement("SELECT * FROM customer WHERE id = ?");
-            stm.setObject(1,txtId1.getText());
+            stm.setObject(1,txtId11.getText());
             ResultSet resultSet = stm.executeQuery();
             if ( resultSet.next()){
 
-                txtName1.setText( resultSet.getString(2));
-                txtAddress1.setText( resultSet.getString(3));
-                txtSalary1.setText( resultSet.getString(4));
+                txtName11.setText( resultSet.getString(2));
+                txtAddress11.setText( resultSet.getString(3));
+                txtSalary11.setText( resultSet.getString(4));
 
             }
 
@@ -137,7 +140,35 @@ public class AddFormController implements Initializable {
         }
 
 
+    }
 
 
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+        Connection connection = null;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+
+            PreparedStatement stm = connection.prepareStatement("UPDATE customer SET name = ?, address = ?, salary = ? WHERE id = ?");
+            stm.setObject(4,txtId11.getText());
+            stm.setObject(1,txtName11.getText());
+            stm.setObject(2,txtAddress11.getText());
+            stm.setObject(3,txtSalary11.getText());
+            int i = stm.executeUpdate();
+            if(i>0){
+                new Alert(Alert.AlertType.INFORMATION ,"Updated "+txtId.getText()).show();
+            }else{
+                new Alert(Alert.AlertType.ERROR ,"Not Updated "+txtId.getText()).show();
+            }
+
+
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+        txtId11.setText(null);txtName11.setText(null);txtAddress11.setText(null);txtSalary11.setText(null);
+        loadTable();
     }
 }

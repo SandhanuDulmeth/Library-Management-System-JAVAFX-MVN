@@ -2,15 +2,18 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFormController">
    <children>
-      <TabPane layoutX="13.0" layoutY="48.0" prefHeight="303.0" prefWidth="557.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="22.0" layoutY="83.0" prefHeight="303.0" prefWidth="557.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Add">
             <content>
@@ -20,7 +23,7 @@
                         <JFXTextField fx:id="txtAddress" layoutX="38.0" layoutY="111.0" promptText="Address" />
                         <JFXTextField fx:id="txtName" layoutX="38.0" layoutY="63.0" promptText="Name" />
                         <JFXTextField fx:id="txtSalary" layoutX="38.0" layoutY="153.0" promptText="Salary" />
-                        <JFXButton layoutX="416.0" layoutY="218.0" onAction="#btnAddOnAction" text="Add" />
+                        <JFXButton layoutX="417.0" layoutY="194.0" onAction="#btnAddOnAction" text="Add" />
                      </children>
                   </AnchorPane>
             </content>
@@ -33,7 +36,7 @@
                         <JFXTextField fx:id="txtAddress1" editable="false" layoutX="38.0" layoutY="111.0" promptText="Address" />
                         <JFXTextField fx:id="txtName1" editable="false" layoutX="38.0" layoutY="63.0" promptText="Name" />
                         <JFXTextField fx:id="txtSalary1" editable="false" layoutX="38.0" layoutY="153.0" promptText="Salary" />
-                        <JFXButton layoutX="416.0" layoutY="218.0" onAction="#btnRemoveOnAction" text="Remove" />
+                        <JFXButton layoutX="417.0" layoutY="194.0" onAction="#btnRemoveOnAction" text="Remove" />
                      </children>
                   </AnchorPane>
                </content>
@@ -42,12 +45,12 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="520.0">
                      <children>
-                        <TableView fx:id="tableCustomer" layoutX="14.0" layoutY="77.0" prefHeight="186.0" prefWidth="535.0">
+                        <TableView fx:id="tableCustomer" layoutX="12.0" layoutY="24.0" prefHeight="186.0" prefWidth="505.0">
                           <columns>
                             <TableColumn fx:id="tblId" prefWidth="84.66665649414062" text="ID" />
-                            <TableColumn fx:id="tblName" prefWidth="168.6666259765625" text="Name" />
-                              <TableColumn fx:id="tblAddress" prefWidth="181.3333740234375" text="Address" />
-                              <TableColumn fx:id="tblSalary" prefWidth="98.6666259765625" text="Salary" />
+                            <TableColumn fx:id="tblName" prefWidth="153.0" text="Name" />
+                              <TableColumn fx:id="tblAddress" prefWidth="156.0" text="Address" />
+                              <TableColumn fx:id="tblSalary" prefWidth="141.0" text="Salary" />
                           </columns>
                         </TableView>
                      </children>
@@ -62,12 +65,21 @@
                         <JFXTextField fx:id="txtAddress11" layoutX="38.0" layoutY="111.0" promptText="Address" />
                         <JFXTextField fx:id="txtName11" layoutX="38.0" layoutY="63.0" promptText="Name" />
                         <JFXTextField fx:id="txtSalary11" layoutX="38.0" layoutY="153.0" promptText="Salary" />
-                        <JFXButton layoutX="416.0" layoutY="218.0" onAction="#btnRemoveOnAction" text="Update" />
+                        <JFXButton layoutX="424.0" layoutY="194.0" onAction="#btnUpdateOnAction" text="Update" />
                      </children>
                   </AnchorPane>
                </content>
             </Tab>
         </tabs>
+         <stylesheets>
+            <URL value="@../css/style.css" />
+            <URL value="@../css/style.css" />
+         </stylesheets>
       </TabPane>
+      <Label layoutX="114.0" layoutY="14.0" prefHeight="51.0" prefWidth="373.0" style="-fx-background-color: #E3DA2F;" text="Library Management System CRUD">
+         <font>
+            <Font name="Bell MT" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
