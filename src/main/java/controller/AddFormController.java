@@ -146,6 +146,13 @@ public class AddFormController implements Initializable {
                 txtGenre1.setText(resultSet.getString(5));
                 txtPrice1.setText(resultSet.getString(6));
 
+            }else{
+
+                txtTitle1.setText(null);
+                txtAuthor1.setText(null);
+                txtpublishedYear1.setText(null);
+                txtGenre1.setText(null);
+                txtPrice1.setText(null);
             }
 
         } catch (ClassNotFoundException | SQLException e) {
