@@ -1,0 +1,47 @@
+.tab-pane {
+    -fx-background-color: #000000; /* Black background for the entire TabPane */
+    -fx-border-color: #FFD700;    /* Yellow border around the TabPane */
+    -fx-border-width: 2px;
+}
+
+.tab-header-area {
+    -fx-background-color: #FFD700; /* Yellow background for the header area */
+    -fx-padding: 5px;             /* Padding around the header area */
+}
+
+.tab-header-background {
+    -fx-background-color: #000000; /* Black background for the tab header */
+}
+
+.tab {
+    -fx-background-color: transparent; /* Transparent background for unselected tabs */
+    -fx-border-color: #FFD700;        /* Yellow border around tabs */
+    -fx-text-fill: #FFD700;           /* Yellow text color for unselected tabs */
+    -fx-padding: 5px 10px;            /* Padding for the tabs */
+}
+
+.tab:hover {
+    -fx-background-color: #444444; /* Dark gray background on hover */
+    -fx-text-fill: #FFD700;        /* Yellow text color on hover */
+}
+
+.tab:selected {
+    -fx-background-color: #FFD700; /* Yellow background for the selected tab */
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #000000;        /* Black text color for the selected tab label */
+    -fx-font-weight: bold;         /* Bold text for better visibility */
+}
+
+.tab-label {
+    -fx-font-size: 14px;           /* Font size for tab labels */
+    -fx-text-fill: #FFD700;        /* Yellow text for unselected tabs */
+}
+
+.tab-content-area {
+    -fx-background-color: #000000; /* Black background for the content area */
+    -fx-padding: 10px;             /* Padding inside the content area */
+    -fx-border-color: #FFD700;     /* Yellow border for the content area */
+    -fx-border-width: 1px;
+}

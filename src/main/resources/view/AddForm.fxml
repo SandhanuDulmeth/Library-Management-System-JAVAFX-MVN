@@ -34,15 +34,6 @@
                         <JFXTextField fx:id="txtName1" editable="false" layoutX="38.0" layoutY="63.0" promptText="Name" />
                         <JFXTextField fx:id="txtSalary1" editable="false" layoutX="38.0" layoutY="153.0" promptText="Salary" />
                         <JFXButton layoutX="416.0" layoutY="218.0" onAction="#btnRemoveOnAction" text="Remove" />
-                        <TabPane layoutX="274.0" layoutY="-75.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                          <tabs>
-                            <Tab text="Untitled Tab 1">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                              </content>
-                            </Tab>
-                          </tabs>
-                        </TabPane>
                      </children>
                   </AnchorPane>
                </content>
