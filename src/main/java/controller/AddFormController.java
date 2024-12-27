@@ -2,6 +2,7 @@ package controller;
 
 import dbConnection.DBConnection;
 import javafx.scene.control.Alert;
+import javafx.scene.input.KeyEvent;
 import model.Customer;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -25,6 +26,10 @@ public class AddFormController implements Initializable {
     public JFXTextField txtAddress;
     public JFXTextField txtName;
     public JFXTextField txtSalary;
+    public JFXTextField txtId1;
+    public JFXTextField txtAddress1;
+    public JFXTextField txtName1;
+    public JFXTextField txtSalary1;
     @FXML
     private TableView<Customer> tableCustomer;
 
@@ -40,16 +45,18 @@ public class AddFormController implements Initializable {
     @FXML
     private TableColumn tblSalary;
 
-    List<Customer> customerList = new ArrayList<>();
+
    public void loadTable() {
-       tableCustomer.setItems(null);
+       tableCustomer.getItems().clear();
+      // Connection connection = DBConnection.getInstance().getConnection();
+       //PreparedStatement stm = connection.prepareStatement("Insert into Customer Values(?,?,?,?)");
+       List<Customer> customerList = new ArrayList<>();
        try {
-           Connection connection = DriverManager.getConnection(
-                   "jdbc:mysql://localhost:3306/thogakade2",
-                   "root",
-                   "1234");
+           Connection connection = DBConnection.getInstance().getConnection();
+
            Statement statement = connection.createStatement();
-           ResultSet resultSet = statement.executeQuery("select *from customer");
+           ResultSet resultSet = statement.executeQuery("select * from customer");
+
            while (resultSet.next()){
                customerList.add(
                        new Customer(
@@ -60,7 +67,7 @@ public class AddFormController implements Initializable {
                ));
            }
            System.out.println(connection);
-       } catch (SQLException e) {
+       } catch (SQLException | ClassNotFoundException e) {
            throw new RuntimeException(e);
        }
        ObservableList<Customer> customerObservableList = FXCollections.observableArrayList();
@@ -88,5 +95,49 @@ public class AddFormController implements Initializable {
          stm.executeUpdate();
          new Alert(Alert.AlertType.INFORMATION ,"Added "+txtId.getText()).show();
         loadTable();
+        txtId.setText(null);txtName.setText(null);txtAddress.setText(null);txtSalary.setText(null);
+    }
+
+
+    public void btnRemoveOnAction(ActionEvent actionEvent) {
+        Connection connection = null;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+
+            PreparedStatement stm = connection.prepareStatement("DELETE FROM customer WHERE id = ?");
+            stm.setObject(1,txtId1.getText());
+            stm.executeUpdate();
+
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+        txtId1.setText(null);txtName1.setText(null);txtAddress1.setText(null);txtSalary1.setText(null);
+        loadTable();
+    }
+
+    public void SearchOnKeyReleased(KeyEvent keyEvent) {
+        Connection connection = null;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+
+            PreparedStatement stm = connection.prepareStatement("SELECT * FROM customer WHERE id = ?");
+            stm.setObject(1,txtId1.getText());
+            ResultSet resultSet = stm.executeQuery();
+            if ( resultSet.next()){
+
+                txtName1.setText( resultSet.getString(2));
+                txtAddress1.setText( resultSet.getString(3));
+                txtSalary1.setText( resultSet.getString(4));
+
+            }
+
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+
     }
 }

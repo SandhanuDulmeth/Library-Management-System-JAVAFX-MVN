@@ -12,7 +12,7 @@
    <children>
       <TabPane layoutX="13.0" layoutY="48.0" prefHeight="303.0" prefWidth="557.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Untitled Tab 1">
+          <Tab text="Add">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -25,7 +25,29 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+            <Tab text="Remove/search">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextField fx:id="txtId1" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" />
+                        <JFXTextField fx:id="txtAddress1" editable="false" layoutX="38.0" layoutY="111.0" promptText="Address" />
+                        <JFXTextField fx:id="txtName1" editable="false" layoutX="38.0" layoutY="63.0" promptText="Name" />
+                        <JFXTextField fx:id="txtSalary1" editable="false" layoutX="38.0" layoutY="153.0" promptText="Salary" />
+                        <JFXButton layoutX="416.0" layoutY="218.0" onAction="#btnRemoveOnAction" text="Remove" />
+                        <TabPane layoutX="274.0" layoutY="-75.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Untitled Tab 1">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="View">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="520.0">
                      <children>
@@ -41,6 +63,19 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Update">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextField fx:id="txtId11" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" />
+                        <JFXTextField fx:id="txtAddress11" layoutX="38.0" layoutY="111.0" promptText="Address" />
+                        <JFXTextField fx:id="txtName11" layoutX="38.0" layoutY="63.0" promptText="Name" />
+                        <JFXTextField fx:id="txtSalary11" layoutX="38.0" layoutY="153.0" promptText="Salary" />
+                        <JFXButton layoutX="416.0" layoutY="218.0" onAction="#btnRemoveOnAction" text="Update" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>
