@@ -1,6 +1,8 @@
-package Controller;
+package controller;
 
-import Model.Customer;
+import dbConnection.DBConnection;
+import javafx.scene.control.Alert;
+import model.Customer;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -76,27 +78,15 @@ public class AddFormController implements Initializable {
         loadTable();
     }
 
-    public void btnAddOnAction(ActionEvent actionEvent) {
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/thogakade2",
-                    "root",
-                    "1234");
-            PreparedStatement stm = connection.prepareStatement("Insert into Customer Values(?,?,?,?)");
-            stm.setObject(1, txtName.getText());
-            stm.setObject(2, customer.getName());
-            stm.setObject(3, customer.getAddress());
-            stm.setObject(4, customer.getSalary());
-            int res = stm.executeUpdate();
-            return res > 0;
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        //Class.forName("com.mysql.cj.jdbc.Driver");
-       // connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/ThogaKade2", "root", "1234");
-        //Connection connection = DBConnection.getInstance().getConnection();
-
+    public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement stm = connection.prepareStatement("Insert into Customer Values(?,?,?,?)");
+        stm.setObject(1, txtId.getText());
+        stm.setObject(2, txtName.getText());
+        stm.setObject(3, txtAddress.getText());
+        stm.setObject(4, txtSalary.getText());
+         stm.executeUpdate();
+         new Alert(Alert.AlertType.INFORMATION ,"Added "+txtId.getText()).show();
+        loadTable();
     }
 }
