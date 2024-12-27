@@ -2,11 +2,16 @@ package Model;
 
 import lombok.*;
 
+//@Getter
+//@Setter
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class Customer {
+    private String id;
     private String name;
-    private String age;
+    private String address;
+    private Double salary;
 }
