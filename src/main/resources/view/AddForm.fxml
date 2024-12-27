@@ -19,13 +19,16 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTextField fx:id="txtId" layoutX="38.0" layoutY="14.0" promptText="Id" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtAuthor" layoutX="38.0" layoutY="111.0" promptText="Author" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtTitle" layoutX="38.0" layoutY="63.0" promptText="Title" text="ii" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtpublishedYear" layoutX="38.0" layoutY="153.0" promptText="PublishedYear" />
-                        <JFXButton layoutX="417.0" layoutY="194.0" onAction="#btnAddOnAction" text="Add" />
-                        <JFXTextField fx:id="txtGenre" layoutX="320.0" layoutY="26.0" promptText="Genre" />
-                        <JFXTextField fx:id="txtPrice" layoutX="320.0" layoutY="75.0" promptText="Price" />
+                        <JFXTextField fx:id="txtId" focusColor="#f4da13" layoutX="38.0" layoutY="14.0" promptText="Id" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtAuthor" focusColor="#f4da13" layoutX="38.0" layoutY="111.0" promptText="Author" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtTitle" focusColor="#f4da13" layoutX="38.0" layoutY="63.0" promptText="Title" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtpublishedYear" focusColor="#f4da13" layoutX="38.0" layoutY="153.0" promptText="PublishedYear" unFocusColor="WHITE" />
+                        <JFXButton layoutX="418.0" layoutY="198.0" onAction="#btnAddOnAction" prefHeight="45.0" prefWidth="127.0" style="-fx-background-color: white;" text="Add">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></JFXButton>
+                        <JFXTextField fx:id="txtGenre" focusColor="#f4da13" layoutX="320.0" layoutY="26.0" promptText="Genre" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtPrice" focusColor="#f4da13" layoutX="320.0" layoutY="75.0" promptText="Price" unFocusColor="WHITE" />
                      </children>
                   </AnchorPane>
             </content>
@@ -34,13 +37,16 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTextField fx:id="txtId1" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchRemoveOnKeyReleased" promptText="Id" />
-                        <JFXTextField fx:id="txtTitle1" editable="false" layoutX="38.0" layoutY="61.0" prefWidth="147.0" promptText="Title" />
-                        <JFXTextField fx:id="txtAuthor1" editable="false" layoutX="38.0" layoutY="114.0" promptText="Author" />
-                        <JFXButton layoutX="417.0" layoutY="194.0" onAction="#btnRemoveOnAction" text="Remove" />
-                        <JFXTextField fx:id="txtpublishedYear1" editable="false" layoutX="38.0" layoutY="168.0" promptText="PublishedYear" />
-                        <JFXTextField fx:id="txtGenre1" editable="false" layoutX="330.0" layoutY="36.0" promptText="Genre" />
-                        <JFXTextField fx:id="txtPrice1" editable="false" layoutX="330.0" layoutY="85.0" promptText="Price" />
+                        <JFXTextField fx:id="txtId1" focusColor="#f4da13" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchRemoveOnKeyReleased" promptText="Id" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtTitle1" editable="false" focusColor="#f4da13" layoutX="38.0" layoutY="61.0" prefHeight="25.0" prefWidth="138.0" promptText="Title" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtAuthor1" editable="false" focusColor="#f4da13" layoutX="38.0" layoutY="114.0" promptText="Author" unFocusColor="WHITE" />
+                        <JFXButton defaultButton="true" layoutX="417.0" layoutY="194.0" onAction="#btnRemoveOnAction" prefHeight="51.0" prefWidth="116.0" style="-fx-background-color: white;" text="Remove">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></JFXButton>
+                        <JFXTextField fx:id="txtpublishedYear1" editable="false" focusColor="#f4da13" layoutX="38.0" layoutY="168.0" promptText="PublishedYear" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtGenre1" editable="false" focusColor="#f4da13" layoutX="330.0" layoutY="14.0" promptText="Genre" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtPrice1" editable="false" focusColor="#f4da13" layoutX="330.0" layoutY="61.0" promptText="Price" unFocusColor="WHITE" />
                      </children>
                   </AnchorPane>
                </content>
@@ -67,13 +73,16 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTextField fx:id="txtId2" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" />
-                        <JFXButton layoutX="424.0" layoutY="194.0" onAction="#btnUpdateOnAction" text="Update" />
-                        <JFXTextField fx:id="txtAuthor2" layoutX="38.0" layoutY="110.0" promptText="Author" />
-                        <JFXTextField fx:id="txtTitle2" layoutX="38.0" layoutY="61.0" promptText="Title" />
-                        <JFXTextField fx:id="txtpublishedYear2" layoutX="38.0" layoutY="156.0" promptText="PublishedYear" />
-                        <JFXTextField fx:id="txtGenre2" layoutX="330.0" layoutY="14.0" promptText="Genre" />
-                        <JFXTextField fx:id="txtPrice2" layoutX="330.0" layoutY="61.0" promptText="Price" />
+                        <JFXTextField fx:id="txtId2" focusColor="#f4da13" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" unFocusColor="WHITE" />
+                        <JFXButton layoutX="424.0" layoutY="194.0" onAction="#btnUpdateOnAction" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: white;" text="Update">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></JFXButton>
+                        <JFXTextField fx:id="txtAuthor2" focusColor="#f4da13" layoutX="38.0" layoutY="110.0" promptText="Author" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtTitle2" focusColor="#f4da13" layoutX="38.0" layoutY="61.0" promptText="Title" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtpublishedYear2" focusColor="#f4da13" layoutX="38.0" layoutY="156.0" promptText="PublishedYear" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtGenre2" focusColor="#f4da13" layoutX="330.0" layoutY="14.0" promptText="Genre" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtPrice2" focusColor="#f4da13" layoutX="330.0" layoutY="61.0" promptText="Price" unFocusColor="WHITE" />
                      </children>
                   </AnchorPane>
                </content>
