@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
         private DBConnection() throws ClassNotFoundException, SQLException {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ThogaKade2", "root", "1234");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookManagement", "root", "1234");
         }
 
         public Connection getConnection() {

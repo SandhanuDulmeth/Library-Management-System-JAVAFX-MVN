@@ -11,19 +11,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFormController">
+<AnchorPane prefHeight="458.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddFormController">
    <children>
-      <TabPane layoutX="22.0" layoutY="83.0" prefHeight="303.0" prefWidth="557.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="22.0" layoutY="83.0" prefHeight="353.0" prefWidth="748.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Add">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <JFXTextField fx:id="txtId" layoutX="38.0" layoutY="14.0" promptText="Id" />
-                        <JFXTextField fx:id="txtAddress" layoutX="38.0" layoutY="111.0" promptText="Address" />
-                        <JFXTextField fx:id="txtName" layoutX="38.0" layoutY="63.0" promptText="Name" />
-                        <JFXTextField fx:id="txtSalary" layoutX="38.0" layoutY="153.0" promptText="Salary" />
+                        <JFXTextField fx:id="txtAuthor" layoutX="38.0" layoutY="111.0" promptText="Author" />
+                        <JFXTextField fx:id="txtTitle" layoutX="38.0" layoutY="63.0" promptText="Title" />
+                        <JFXTextField fx:id="txtpublishedYear" layoutX="38.0" layoutY="153.0" promptText="PublishedYear" />
                         <JFXButton layoutX="417.0" layoutY="194.0" onAction="#btnAddOnAction" text="Add" />
+                        <JFXTextField fx:id="txtGenre" layoutX="320.0" layoutY="26.0" promptText="Genre" />
+                        <JFXTextField fx:id="txtPrice" layoutX="320.0" layoutY="75.0" promptText="Price" />
                      </children>
                   </AnchorPane>
             </content>
@@ -32,11 +34,13 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTextField fx:id="txtId1" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" />
-                        <JFXTextField fx:id="txtAddress1" editable="false" layoutX="38.0" layoutY="111.0" promptText="Address" />
-                        <JFXTextField fx:id="txtName1" editable="false" layoutX="38.0" layoutY="63.0" promptText="Name" />
-                        <JFXTextField fx:id="txtSalary1" editable="false" layoutX="38.0" layoutY="153.0" promptText="Salary" />
+                        <JFXTextField fx:id="txtId1" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchRemoveOnKeyReleased" promptText="Id" />
+                        <JFXTextField fx:id="txtTitle1" editable="false" layoutX="38.0" layoutY="61.0" prefWidth="147.0" promptText="Title" />
+                        <JFXTextField fx:id="txtAuthor1" editable="false" layoutX="38.0" layoutY="114.0" promptText="Author" />
                         <JFXButton layoutX="417.0" layoutY="194.0" onAction="#btnRemoveOnAction" text="Remove" />
+                        <JFXTextField fx:id="txtpublishedYear1" editable="false" layoutX="38.0" layoutY="168.0" promptText="PublishedYear" />
+                        <JFXTextField fx:id="txtGenre1" editable="false" layoutX="330.0" layoutY="36.0" promptText="Genre" />
+                        <JFXTextField fx:id="txtPrice1" editable="false" layoutX="330.0" layoutY="85.0" promptText="Price" />
                      </children>
                   </AnchorPane>
                </content>
@@ -45,12 +49,14 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="520.0">
                      <children>
-                        <TableView fx:id="tableCustomer" layoutX="12.0" layoutY="24.0" prefHeight="186.0" prefWidth="505.0">
+                        <TableView fx:id="tableCustomer" layoutX="12.0" layoutY="24.0" prefHeight="193.0" prefWidth="704.0">
                           <columns>
-                            <TableColumn fx:id="tblId" prefWidth="84.66665649414062" text="ID" />
-                            <TableColumn fx:id="tblName" prefWidth="153.0" text="Name" />
-                              <TableColumn fx:id="tblAddress" prefWidth="156.0" text="Address" />
-                              <TableColumn fx:id="tblSalary" prefWidth="141.0" text="Salary" />
+                            <TableColumn fx:id="tblId" prefWidth="84.66665649414062" text="BookID" />
+                            <TableColumn fx:id="tblTitle" prefWidth="171.0" text="Title" />
+                              <TableColumn fx:id="tblAuthor" prefWidth="138.0" text="Author" />
+                              <TableColumn fx:id="tblPublishedYear" prefWidth="112.0" text="PublishedYear" />
+                              <TableColumn fx:id="tblGenre" prefWidth="120.0" text="Genre" />
+                              <TableColumn fx:id="tblPrice" prefWidth="77.0" text="Price" />
                           </columns>
                         </TableView>
                      </children>
