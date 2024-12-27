@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddFormController">
+   <children>
+      <JFXTextField layoutX="87.0" layoutY="72.0" promptText="hey" />
+      <JFXButton layoutX="524.0" layoutY="174.0" text="click" />
+      <TableView fx:id="tableCustomer" layoutX="44.0" layoutY="244.0" prefHeight="120.0" prefWidth="504.0">
+        <columns>
+          <TableColumn fx:id="tblId" prefWidth="84.66665649414062" text="ID" />
+          <TableColumn fx:id="tblName" prefWidth="158.66668701171875" text="Name" />
+            <TableColumn fx:id="tblAddress" prefWidth="140.6666259765625" text="Address" />
+            <TableColumn fx:id="tblSalary" prefWidth="121.33331298828125" text="Salary" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

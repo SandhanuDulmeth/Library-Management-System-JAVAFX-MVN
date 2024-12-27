@@ -1,0 +1,20 @@
+import Model.Customer;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+public class Starter extends Application {
+    public static void main(String[] args) {
+        launch();
+      //  Customer customer = new Customer();
+       // customer.;
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/AddForm.fxml"))));
+        stage.show();
+    }
+}
