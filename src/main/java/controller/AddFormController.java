@@ -225,9 +225,9 @@ public class AddFormController implements Initializable {
             stm.setObject(5, txtPrice2.getText());
             int i = stm.executeUpdate();
             if (i > 0) {
-                new Alert(Alert.AlertType.INFORMATION, "Updated " + txtId.getText()).show();
+                new Alert(Alert.AlertType.INFORMATION, "Updated " ).show();
             } else {
-                new Alert(Alert.AlertType.ERROR, "Not Updated " + txtId.getText()).show();
+                new Alert(Alert.AlertType.ERROR, "Not Updated " ).show();
             }
 
 
