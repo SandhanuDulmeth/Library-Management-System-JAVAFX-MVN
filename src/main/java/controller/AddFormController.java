@@ -128,13 +128,13 @@ public class AddFormController implements Initializable {
             clearFields();
 
         } catch (SQLIntegrityConstraintViolationException e) {
-            // This exception handles duplicate ID (Primary Key violation)
+
             new Alert(Alert.AlertType.ERROR, "Duplicate ID: " + txtId.getText()).show();
         } catch (SQLException e) {
-            // Handles other SQL-related errors
+
             new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
         } catch (ClassNotFoundException e) {
-            // Handles class loading issues
+
             new Alert(Alert.AlertType.ERROR, "Class Not Found Error: " + e.getMessage()).show();
         }
     }
