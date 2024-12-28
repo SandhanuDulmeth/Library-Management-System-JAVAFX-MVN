@@ -73,16 +73,16 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <JFXTextField fx:id="txtId2" focusColor="#f4da13" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtId2" focusColor="#f4da13" layoutX="38.0" layoutY="14.0" onKeyReleased="#SearchOnKeyReleased" promptText="Id" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
                         <JFXButton layoutX="424.0" layoutY="194.0" onAction="#btnUpdateOnAction" prefHeight="51.0" prefWidth="131.0" style="-fx-background-color: white;" text="Update">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font></JFXButton>
-                        <JFXTextField fx:id="txtAuthor2" focusColor="#f4da13" layoutX="38.0" layoutY="110.0" promptText="Author" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtTitle2" focusColor="#f4da13" layoutX="38.0" layoutY="61.0" promptText="Title" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtpublishedYear2" focusColor="#f4da13" layoutX="38.0" layoutY="156.0" promptText="PublishedYear" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtGenre2" focusColor="#f4da13" layoutX="330.0" layoutY="14.0" promptText="Genre" unFocusColor="WHITE" />
-                        <JFXTextField fx:id="txtPrice2" focusColor="#f4da13" layoutX="330.0" layoutY="61.0" promptText="Price" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtAuthor2" focusColor="#f4da13" layoutX="38.0" layoutY="110.0" promptText="Author" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtTitle2" focusColor="#f4da13" layoutX="38.0" layoutY="61.0" promptText="Title" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtpublishedYear2" focusColor="#f4da13" layoutX="38.0" layoutY="156.0" promptText="PublishedYear" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtGenre2" focusColor="#f4da13" layoutX="330.0" layoutY="14.0" promptText="Genre" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
+                        <JFXTextField fx:id="txtPrice2" focusColor="#f4da13" layoutX="330.0" layoutY="61.0" promptText="Price" stylesheets="@../css/styletextField.css" unFocusColor="WHITE" />
                      </children>
                   </AnchorPane>
                </content>
