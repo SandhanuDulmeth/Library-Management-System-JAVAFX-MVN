@@ -106,23 +106,40 @@ public class AddFormController implements Initializable {
         loadTable();
     }
 
-    public void btnAddOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement stm = connection.prepareStatement("Insert into book Values(?,?,?,?,?,?)");
-        stm.setObject(1, txtId.getText());
-        stm.setObject(2, txtTitle.getText());
-        stm.setObject(3, txtAuthor.getText());
-        stm.setObject(4, txtpublishedYear.getText());
-        stm.setObject(5, txtGenre.getText());
-        stm.setObject(6, txtPrice.getText());
-        int i = stm.executeUpdate();
-        if(i>0){
-            new Alert(Alert.AlertType.INFORMATION, "Added " + txtId.getText()).show();
-        }else{
-            new Alert(Alert.AlertType.ERROR, "Not Added " + txtId.getText()).show();
-        }
+    public void btnAddOnAction(ActionEvent actionEvent) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement stm = connection.prepareStatement("INSERT INTO book VALUES (?, ?, ?, ?, ?, ?)");
+            stm.setObject(1, txtId.getText());
+            stm.setObject(2, txtTitle.getText());
+            stm.setObject(3, txtAuthor.getText());
+            stm.setObject(4, txtpublishedYear.getText());
+            stm.setObject(5, txtGenre.getText());
+            stm.setObject(6, txtPrice.getText());
 
-        loadTable();
+            int i = stm.executeUpdate();
+            if (i > 0) {
+                new Alert(Alert.AlertType.INFORMATION, "Added " + txtId.getText()).show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Not Added " + txtId.getText()).show();
+            }
+
+            loadTable();
+            clearFields();
+
+        } catch (SQLIntegrityConstraintViolationException e) {
+            // This exception handles duplicate ID (Primary Key violation)
+            new Alert(Alert.AlertType.ERROR, "Duplicate ID: " + txtId.getText()).show();
+        } catch (SQLException e) {
+            // Handles other SQL-related errors
+            new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            // Handles class loading issues
+            new Alert(Alert.AlertType.ERROR, "Class Not Found Error: " + e.getMessage()).show();
+        }
+    }
+
+    private void clearFields() {
         txtId.setText(null);
         txtTitle.setText(null);
         txtAuthor.setText(null);
@@ -130,6 +147,7 @@ public class AddFormController implements Initializable {
         txtGenre.setText(null);
         txtPrice.setText(null);
     }
+
     public void SearchRemoveOnKeyReleased(KeyEvent keyEvent) {
         Connection connection = null;
         try {
