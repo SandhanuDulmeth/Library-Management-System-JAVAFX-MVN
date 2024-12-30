@@ -129,13 +129,13 @@ public class AddFormController implements Initializable {
 
         } catch (SQLIntegrityConstraintViolationException e) {
 
-            new Alert(Alert.AlertType.ERROR, "Duplicate ID: " + txtId.getText()).show();
-        } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "Duplicate ID: " + txtId.getText()).show();
+            } catch (SQLException e) {
 
-            new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
-        } catch (ClassNotFoundException e) {
+                new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
+            } catch (ClassNotFoundException e) {
 
-            new Alert(Alert.AlertType.ERROR, "Class Not Found Error: " + e.getMessage()).show();
+                new Alert(Alert.AlertType.ERROR, "Class Not Found Error: " + e.getMessage()).show();
         }
     }
 
